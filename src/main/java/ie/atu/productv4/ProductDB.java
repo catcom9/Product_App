@@ -1,14 +1,7 @@
-package ie.atu.productv3;
+package ie.atu.productv4;
 
 
 public class ProductDB {
-
-    //  public static Book or Software getProduct(String productCode) {
-    // In a more realistic application, this code would get the data for the product from a file or database
-    // For now, this code just uses if/else statements to return the correct product data
-
-    //We need all the book and software objects, but what kind of object do we return?
-    //}
 
     public static Product getProduct(String productCode){
         Product p = null;
@@ -55,8 +48,24 @@ public class ProductDB {
             mySoftware.setPrice(54.50);
             mySoftware.setVersion("Oracle 3.0");
             p = mySoftware;
+        } else if (productCode.equalsIgnoreCase("PINK")) {
+            Music myMusic = new Music();
+            myMusic.setCode(productCode);
+            myMusic.setDescription("Wish you were here");
+            myMusic.setPrice(8.00);
+            myMusic.setArtist("Pink Floyd");
+            myMusic.setLabel("Columbia Group");
+            p = myMusic;
         }
-
+        else if (productCode.equalsIgnoreCase("kdl43")) {
+            Tv myTv = new Tv();
+            myTv.setCode(productCode);
+            myTv.setDescription("Sony Bravia Smart TV KDL43WF663");
+            myTv.setPrice(819.00);
+            myTv.setSize("55\"");
+            myTv.setManufacture("Sony");
+            p = myTv;
+        }
 
         return p;
     }
